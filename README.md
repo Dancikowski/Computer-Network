@@ -21,9 +21,9 @@ LAN = zasięg domeny rozgłoszeniowej. !!
 
 **CSMA (Carrier Sense Multiple Access)** - algorytm arbitrażowy. Rozwiązuje problem kolizji w sieci 802.11. Polega na tym, że komputer chcący nadawać oczekuje na losowy adres przed transmijsą, a jeśli w czasie transmisji wykryje innego nadawcę, odstępuje od niej i znów czeka losowy okres.
 
-WEP - schemat szyfrowania połączenia w sieci 802.11. Polegał na kryptograficznym odizolowaniu transmijsi pomidzy klientami. Schemat był jednak niedpracowany i został zostąpiony przez WPA, a następnie przez WPA2.
+**WEP** - schemat szyfrowania połączenia w sieci 802.11. Polegał na kryptograficznym odizolowaniu transmijsi pomidzy klientami. Schemat był jednak niedpracowany i został zostąpiony przez WPA, a następnie przez WPA2.
 
-10BASE-T - standard Ethernetowy, który pozwala urządzeniom siciowym na komunikacje z wukorzystaniem skrętki. Przewidywana prędkość to 10 Mb/s.
+**10BASE-T** - standard Ethernetowy, który pozwala urządzeniom siciowym na komunikacje z wukorzystaniem skrętki. Przewidywana prędkość to 10 Mb/s.
 
 Wyjaśnienie:
 
@@ -31,42 +31,42 @@ Wyjaśnienie:
 -   BASE - przesłanie sygnału w paśmie podstawowym bez modulacji
 -   T - skrętka
 
-100BASE-TX - tzw. fast Ethernet, maks prędkość to 100Mb/s. Medium transmisyjnym jest skretka nieekranowa UTP lub FTP zakończona obustronnie złączem 8P8C.
+**100BASE-TX** - tzw. fast Ethernet, maks prędkość to 100Mb/s. Medium transmisyjnym jest skretka nieekranowa UTP lub FTP zakończona obustronnie złączem 8P8C.
 
-1000BASE-TX/FX - prędkość 1 Gigabit/s.s
+**1000BASE-TX/FX** - prędkość 1 Gigabit/s.s
 
-Szereg fouriera jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (Analiza !!)
+**Szereg fouriera** jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (Analiza !!)
 
 Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy szerokością pasma. Szerokość pasma jest fizyczną właściwością nośnika transmisjij zależną na przykład od konstruklcji kanału, czyli choćby od grubości i długośći przewodów czy śwatłowodów. Np. kanały sieci bezprzewodowych 802.11 mogą zajmować pasmo o szerkości mniej więcej 20MHz.
 
-Skrętka (twisted pair) - najbardziej popularnym zaastosowaniem skrętki jest system telefonnii. Można wykonywac również połączenia z internetem (ADSL). Sygnał za pomoca tego mediium można przeysłac nawet na odległość kilku kilometów jednak na dłuszą metę potrzebne będa regeneratory. Gdyby nie skręcanie kabelków, kable zakłócałyby się nawzajem. Skrętką można przesyłać sygnał analogowy jak i cyfrowy.
+**Skrętka (twisted pair)** - najbardziej popularnym zaastosowaniem skrętki jest system telefonnii. Można wykonywac również połączenia z internetem (ADSL). Sygnał za pomoca tego mediium można przeysłac nawet na odległość kilku kilometów jednak na dłuszą metę potrzebne będa regeneratory. Gdyby nie skręcanie kabelków, kable zakłócałyby się nawzajem. Skrętką można przesyłać sygnał analogowy jak i cyfrowy.
 
-UTP - skrętka nieekranowa
+**UTP** - skrętka nieekranowa
 Ekranowanie zmniejsza podatność na zakłócenia oraz przesłuchy.
 
-Kabel koncentryczny - ma szersze pasmo niż nieekranowa skrętka. Pozwala na przesylanie sygnału z większą szybkością niż skrętka.
+**Kabel koncentryczny** - ma szersze pasmo niż nieekranowa skrętka. Pozwala na przesylanie sygnału z większą szybkością niż skrętka.
 
-Światłowody - zapewnia jednokierunkowy system transmisjji danych, który przejmuje sygnał elektryczny, przekształca go i przesyła w posstaci impulsów światła, a następnie ponownie przekształca wyjscie na sygnał elektryczny po stronie odbiornika.
+**Światłowody** - zapewnia jednokierunkowy system transmisjji danych, który przejmuje sygnał elektryczny, przekształca go i przesyła w posstaci impulsów światła, a następnie ponownie przekształca wyjscie na sygnał elektryczny po stronie odbiornika.
 
-Modulacja cyfrowa - proces konwersji bitów na reprezentujące je sygnały analogowe. Urządzenie używane do tego to modem (Modular Deemulator
+**Modulacja cyfrowa** - proces konwersji bitów na reprezentujące je sygnały analogowe. Urządzenie używane do tego to modem (Modular Deemulator
 
-Koder - dekoder - urządzenie słuzące do przetwarzania sygnałów analogowych na na cyfrowe.
+**Koder-dekoder** - urządzenie słuzące do przetwarzania sygnałów analogowych na na cyfrowe.
 
 ### Urządzenia
 
 Warstwa fizyczna:
-Wzmacniak - urządzenia analogowe operujące na sygnałach przesyłanych kablami., do których są podłączone. Sygnał odebrany z jednego kabla jest oczysczany, wzmacniany i propagowany do drugiego kabla. Wzmacniaki nie rozumieją ramek, pakietów i nagłówków.
+**Wzmacniak** - urządzenia analogowe operujące na sygnałach przesyłanych kablami., do których są podłączone. Sygnał odebrany z jednego kabla jest oczysczany, wzmacniany i propagowany do drugiego kabla. Wzmacniaki nie rozumieją ramek, pakietów i nagłówków.
 
-Koncentrator - ma pewną liczbę linii wejściowych, które łączy elektrycznie. Ramki pojawiające się w dowolnej linii są wysyłane do wszystkich pozostałych. Działa w trybie półduplesku, czyli nie może jednocześnie odbierać i wysylać danych.
+**Koncentrator** - ma pewną liczbę linii wejściowych, które łączy elektrycznie. Ramki pojawiające się w dowolnej linii są wysyłane do wszystkich pozostałych. Działa w trybie półduplesku, czyli nie może jednocześnie odbierać i wysylać danych.
 Przykład: do koncentratora, który ma 4 porty mamy podłączone 4 urządzenia. Komputer z portu 2 chce wysłać dane do komputera
 na porcie numer 1. Wysyła również te dane do komputerów na portach 3 i 4, klienci na tych portach sprawdzają docelowy adres MAC
 zawarty w nagłówku Ethernet i odrzucają to połączenie. To rozwiązanie generuje dużo niepotrzebnego ruchu sieciowego.
 
 ## Warstwa łącza danych
 
-Most - posiada wiele portów. Inaczej niż w koncentratorze każdy z portów jest odizolowany od innych. a więc wyznacza odrębną domene kolizyjną. Jeśli port posiada pełnodupleksową linie dwupunktową, nie potrzebuje stosować allgorytmu dostępu wielokrotnego CSMA/CD. Gdy do mostu przychodzi ramka, wydobywa on adres docelowy z jej nagłówka i szuka go w tablicy aby sprawdzić gdzie przesłac ramkę. Most przekazuje ramkę tylko na ten port gdzie powinna trafiić
+**Most** - posiada wiele portów. Inaczej niż w koncentratorze każdy z portów jest odizolowany od innych. a więc wyznacza odrębną domene kolizyjną. Jeśli port posiada pełnodupleksową linie dwupunktową, nie potrzebuje stosować allgorytmu dostępu wielokrotnego CSMA/CD. Gdy do mostu przychodzi ramka, wydobywa on adres docelowy z jej nagłówka i szuka go w tablicy aby sprawdzić gdzie przesłac ramkę. Most przekazuje ramkę tylko na ten port gdzie powinna trafiić
 
-Przełączniki - nowoczesne mosty. Został zaprojektowany w tym samym celu co koncentrator. Jednak w przeciwienstwie do koncentratora wysyła dane tylko do komputera dla którego są one przeznaczone. W celu indentyfiikacji komputerów przełącznik odróżnia komputery na
+**Przełączniki** - nowoczesne mosty. Został zaprojektowany w tym samym celu co koncentrator. Jednak w przeciwienstwie do koncentratora wysyła dane tylko do komputera dla którego są one przeznaczone. W celu indentyfiikacji komputerów przełącznik odróżnia komputery na
 na podstawie adresów MAC, działa więc na warstwie 2. Może działać w trybie pełnego dupleksu.
 
 Pytania:
@@ -77,11 +77,11 @@ Pytania:
 
 Warstwa sieciowa
 
-Router - gdy pakiet dociera do routera, nagłowek i stopka ramki są usuwane, a pakiet mieszczący się w polu ładunku użytecznego ramki jest przekazywany do oprogramowania routingu. W pakiecie IP nagłówek zawiera 32 - bitowy (Ipv4) lub 128 - bitowy (IPv6) adres 802.
+**Router** - gdy pakiet dociera do routera, nagłowek i stopka ramki są usuwane, a pakiet mieszczący się w polu ładunku użytecznego ramki jest przekazywany do oprogramowania routingu. W pakiecie IP nagłówek zawiera 32 - bitowy (Ipv4) lub 128 - bitowy (IPv6) adres 802.
 
 Warstwa transportowa
 
-Brama - łączy ona dwa kompitery używające odmiennych połączeniowych protokołów transportowych. Załóżmy, że komputer używający połączeniowego TCP/IP chce komunikować się z komputerem używającym innego protokołu połączeniowego o nazwie SCTP. Brama może kopiować pakiety z jednego połączenia do drugiego, w razie potrzeby zmieniając ich format.
+**Brama** - łączy ona dwa kompitery używające odmiennych połączeniowych protokołów transportowych. Załóżmy, że komputer używający połączeniowego TCP/IP chce komunikować się z komputerem używającym innego protokołu połączeniowego o nazwie SCTP. Brama może kopiować pakiety z jednego połączenia do drugiego, w razie potrzeby zmieniając ich format.
 
 ### Wirtualna sieć lokalna VLAN
 
@@ -111,7 +111,7 @@ Procesy warstwy fizycznej oraz część procesów warstwy łącza danch działaj
 
 Standard 802.11, określany pierwotnie mianem 802.11i, opisuje protokół zapobiegania odczytowi komunikatów wymienianych pomiędzy parą inych węzłów sieci bezprzewodowej albo ingerowaniu w nie. Rzecz znan również pod nazą **WPA2 (Wi Fi protected Access 2)**. Stosowane wcześniej **WPA** to mechanizm skromniejszy, stanowiacy implementację podzbioru standardu 802.11i - preferowanym mechanizmem jest obecnie WPA2.
 
-WPA2 stosuje się typowo w dwóch przypadkach: pierwszy obejmuje wdrożenia korporacyjne, gdzie wyróżniono serwer uwierzytelniania z bazą użytkowników i haseł umożliwiających werfikacje, czy dany user moze dostać dostęp do sieci. Alternatywą jest tutaj **EAP(Extensible Authentication Protocol)** opisujący sposób interakcji pomiędzy klientem, a serwerem uwierzyelniania.
+**WPA2** stosuje się typowo w dwóch przypadkach: pierwszy obejmuje wdrożenia korporacyjne, gdzie wyróżniono serwer uwierzytelniania z bazą użytkowników i haseł umożliwiających werfikacje, czy dany user moze dostać dostęp do sieci. Alternatywą jest tutaj **EAP(Extensible Authentication Protocol)** opisujący sposób interakcji pomiędzy klientem, a serwerem uwierzyelniania.
 
 Drugi scenariusz to przypadek instalacji domowej, gdzie nie ma wyróznionego serwera uwierzytelniania. Zamiast tego mamy pojedyczne wspólne hasło dostępowe
 
