@@ -159,3 +159,5 @@ Gdy adres rozgłoszeniowy 192.168.11.255 -> ostatni host 192.168.11.254
 ## Różne
 
 **Big endian** - to forma zapisu danych, w której najbardziej znacząct bajt jest ustawiany jako pierwszy.
+
+**NAT (Network Address Translation)** - polega na tym, że operator ISP przydziela każdemu domostwu albo firmie pojedynczy adres IP. Wewnątrz sieco klienta każdy komputer otrzymuje unikatowy adres IP używany do komunijacji wewnętrznej. Gdy jednak pakiet od któregoś z hostów sieci wewnętrznej ma zostać przekzany do sieci operatora, odbywa się translacja adresu z unikatowego wewnętrznego adresu IP na adres publiczny wspólny dla całej sieci wewnętrznej. 
