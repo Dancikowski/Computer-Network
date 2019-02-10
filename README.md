@@ -136,6 +136,17 @@ Internet jest zbudowany z dużej liczby systemów niezależnych albo **AS (Auton
 
 **BGP (Border Gateway Protocol)** - w obrębie jednego systemu autonomicznego AS routing załatwiają najczęściej protokoły OSPF i IS-IS. Ale pomiędzy AS-ami króluje inn protokół o nazwie BGP - protokół bram granicznych.
 
+## Adresacja IPv4
+
+Adres IP to adres interfejsu sieciowego, nie urządzenia.
+
+**Adres podsieci**:
+Adres -- Maska --> operacja AND
+
+**Adres rozgłoszeniowy**:
+Maska --> NOT -- Adres --> Operacja OR
+
+
 ## Różne
 
 **Big endian** - to forma zapisu danych, w której najbardziej znacząct bajt jest ustawiany jako pierwszy.
