@@ -136,6 +136,16 @@ Internet jest zbudowany z dużej liczby systemów niezależnych albo **AS (Auton
 
 **BGP (Border Gateway Protocol)** - w obrębie jednego systemu autonomicznego AS routing załatwiają najczęściej protokoły OSPF i IS-IS. Ale pomiędzy AS-ami króluje inn protokół o nazwie BGP - protokół bram granicznych.
 
+## Bluetooth
+
+Standard bezprzewodowej komunikacji krótkiego zasięgu pomiędzy różnymi urządzeniami elektronicznymi, takimi jak klawiatura, komputer, laptop, palmtop, smartfon i wieloma innymi.
+Jest to otwarty standard opisany w specyfikacji IEEE 802.15.1. Jego specyfikacja techniczna obejmuje trzy klasy mocy nadawczej ERP 1-3 o zasięgu 100, 10 oraz 1 metra w otwartej przestrzeni. Najczęściej spotykaną klasą jest klasa druga. Standard korzysta z fal radiowych w paśmie częstotliwości ISM 2,4 GHz.
+Do wymiany danych stosuje dwa typy łączy **SCO** oraz **ACL**.
+Bluetooth wkorzystuje **FHSS**
+
+**FHSS (Frequency-Hopping Spread Spectrum)** – metoda rozpraszania widma w systemach szerokopasmowych. W tłumaczeniu wprost jest to „skakanie” sygnału po częstotliwościach w kolejnych odstępach czasu, w dostępnym widmie (paśmie).
+
+
 ## Adresacja IPv4
 
 Adres IP to adres interfejsu sieciowego, nie urządzenia.
