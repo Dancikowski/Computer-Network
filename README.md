@@ -33,6 +33,12 @@
 analogowej na cyfrową i na odwrót.
 
 
+Proces **hermetyzacji** to dodawanie do transmitowanych dancyh nagłowka lub stopki, są to informacje dzięki którym sąsiadujące warstwy są w stanie się komunikować.
+Gdy pakiet idzie z warstwy aplikacji to tworzy się tzw. **PDU (Protocol Data Unit)**, wraz z przechodzeniem przez każdą warstwę, PDU rośnie. Gdy dochodzi do warstwy fizycznej
+wszystko wysyła się do drugiego urządzenia, a to urządzenie przesyła pakiet w górę, usuwając jednocześnie dane odnoszące się do tej warstwy.
+
+
+
 <b style="color:red">Domena kolizyjna - </b> jeśli poprzez jedno medium transimsyjne np. kabel , co najmniej dwa urządzenia transmitują dane może dojść do kolizji. Obszar sieci, w którym może dojść do kolzji nazywamy domena kolizyjną. Maksymalna liczba urządzeń w domenie kolizyjnej to 1024. Przy czym im więcej urządzeń, tym większe ryzyko wystąpienia kolizji. Domenę kolizyjna mogą ograniczać switch (przełącznik) oraz router.  
 W koncentratorze ( warstwa 1 OSI) wszystkie podłączone stacje składają się na domenę kolizyjną. Wszystkie zatem muszą korzystać z alogrytmu *CSMA/CD* w celu uporządkowania transmisji.
 W przełączniku każdy port stanowi oddzielną domenę kolizyjną. Algorytm CSMA/CD NIE jest potrzebny.
