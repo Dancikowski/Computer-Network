@@ -2,13 +2,13 @@
 
 ## Model OSI
 
-**Warstwa aplikacji (7)** - Najwyższa warstwa to ta naprawde program, który pozwala użytkownikowi uzyskać dostęp do zasobów sieciowych.To najczęściej jedyna warstwa dostępna dla użytkownika końcowego.
+**Warstwa aplikacji (7)** - Najwyższa warstwa to tak naprawde program, który pozwala użytkownikowi uzyskać dostęp do zasobów sieciowych.To najczęściej jedyna warstwa dostępna dla użytkownika końcowego.
 **Protokoły**: HTTP, SMTP, FTP
 
 **Warstwa prezentacji (6)** - Warstwa konwertuje otrzymana dane na format zrozumiały dla użytkownika w warstwie aplikacji. Obsługuje kilka form szyfrowania i deszyfrowania stosowanych w celu zabezpieczenia danych.
 **Protokoły:** ASCII, MPEG, JPEG
 
-**Warstwa sesji (5)** - warstwa da oznacza dialog, inaczej sesję pomiędzy dwoma komputerami. Jest odpowiedzialna za połączenia pomiędzy wszystkimi komunikującymi się komputerami (nawiązywanie połączen, zarządzanie nimi, zamykanie ich). Odpwiada także za rodzaj połączenia (półduplex, duplex).Odpowiada także za eleanckie zakończenia połączenia zamiast nagłego zerwania.
+**Warstwa sesji (5)** - warstwa da oznacza dialog, inaczej sesję pomiędzy dwoma komputerami. Jest odpowiedzialna za połączenia pomiędzy wszystkimi komunikującymi się komputerami (nawiązywanie połączeń, zarządzanie nimi, zamykanie ich). Odpwiada także za rodzaj połączenia (półduplex, duplex).Odpowiada także za eleanckie zakończenia połączenia zamiast nagłego zerwania.
 **Protokoły:** NETBIOS, SAP, SDP
 
 **Warstwa transportowa (4)** - Podstawowtym celem tej warstwy jest zapewnienie niezawodnych usług transportu danych do warstw niższych. Poprzez kontrolę przepływu, segmentacje danych(dzielenie na segmenty) i ponowne łączenie oraz kontrolę błędów gwaratnuje przekazanie bezbłędnych danych do punktu docelowego. Niektóre zapory sieciowe i serwery proxy działają w ramach tej warstwy.
