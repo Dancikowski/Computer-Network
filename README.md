@@ -160,6 +160,18 @@ Punkt dostępowy jest zazwyczaj mostem łączącym bezprzewodową sieć lokalną
 
 **ESS (Extended Service Set)** - powstaje w wyniku połączenia kilku BSS-ów za pomocą sieci szkieletowej. W takiej sieci stacje mogą przemieszczać się pomiędzy różnymi BSS-ami bez utraty połączenia. Na obszarze sieci ESS możliwy jest **roaming**.
 
+## Polecenia w systemie Linux
+
+**Netstat** - wyświetla połączenia sieciowe, tablice tras, statystyki interfejsów, połączenia masquerade i członkostwa multicast. 
+
+**Nslookup** - narzędzie działające podobnie do protokołu DNS, zwraca adres IP żądanego endpointu oraz adres serwera. Po wybraniu opcji z autoryzacją można otrzymać bardziej szczegółowe informacje
+
+**ifconfig** - służy do sprawdzania i zmieniania intefejsów sieciowych.
+
+**traceroute** - służy do badania trasy pakietów w sieci
+
+**ping** - służy do diagnozowania połączeń sieciowych. Wykorzystuje ICMP.
+
 ## Adresacja IPv4
 
 Adres IP to adres interfejsu sieciowego, nie urządzenia.
