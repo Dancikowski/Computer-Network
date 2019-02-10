@@ -51,6 +51,11 @@ wszystko wysyła się do drugiego urządzenia, a to urządzenie przesyła pakiet
 2. Drugi komputer odpowiada podobnym pakietem z ustawioną flagą na ACK/SYN oraz początkowym numerem sekwencyjnym.
 3. Na koniec pierwszy komputer wysyła do drugiego pakiet z flagą ACK. Po tym urządzenia mogą się komunikować.
 
+**Proces zakończenia połączenia**
+1.W pierwszym kroku komputer A informuje komputer B o zakończeniu połączenia poprzez wysłanie pakietu TCP z ustawionymi flagami **FIN i ACK**
+2.Komputer B odpowiada pakietem **ACK** i wysyła własny pakiet **FIN/ACK**
+3.Komputer A odpowada pakietem **ACK**
+
 ### UDP
 
 -   celem utworzenia UDP było przyspieszenie transmisji danych
