@@ -162,7 +162,7 @@ Podział na podsieci odbywa się poprzez pożyczanie kolejnych bitów z części
 
 255.255.255.0 -> 1 podsieć
 
-255.255.255.128 -> 2 podsieci. Pożyczony został 1 bit pierwszy od lewej czyli 2<sup>8</sup>.
+255.255.255.128 -> 2 podsieci. Pożyczony został 1 bit pierwszy od lewej czyli 2<sup>7</sup>.
 
 Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 
