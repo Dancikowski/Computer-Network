@@ -1,21 +1,19 @@
 # Computer Network
 
-<b style="color:red">Domena kolizyjna - </b> jeśli poprzez jedno medium transimsyjne np. kabel , co najmniej dwa urządzenia transmitują dane może dojść do kolizji. Obszar sieci, w którym może dojśc do kolzji nazywamy domena kolizyjną. Maksymalna iczba urządzeń w domenie kolizyjnej to 1024. Przy czym im więcej urządzeń, tym większe ryzyko wystąpienia kolizji. Domenę kolizyjna mogą ograniczać switch (przełącznik) oraz router.  
-W koncentratorze ( warstwa 1 OSI) wszystkie podłączone stacje składają się na domenę kolizyjną. Wszystkie zatem muszą korzystać z alogrytmu CSMA/CD w celu uporządkowania transmisji.
+<b style="color:red">Domena kolizyjna - </b> jeśli poprzez jedno medium transimsyjne np. kabel , co najmniej dwa urządzenia transmitują dane może dojść do kolizji. Obszar sieci, w którym może dojść do kolzji nazywamy domena kolizyjną. Maksymalna liczba urządzeń w domenie kolizyjnej to 1024. Przy czym im więcej urządzeń, tym większe ryzyko wystąpienia kolizji. Domenę kolizyjna mogą ograniczać switch (przełącznik) oraz router.  
+W koncentratorze ( warstwa 1 OSI) wszystkie podłączone stacje składają się na domenę kolizyjną. Wszystkie zatem muszą korzystać z alogrytmu *CSMA/CD* w celu uporządkowania transmisji.
 W przełączniku każdy port stanowi oddzielną domenę kolizyjną. Algorytm CSMA/CD NIE jest potrzebny.
 
 <b>Domena rozgłoszeniowa </b> - to taki obszar sieci, do którego dotrze informacja przeslana z jednego komputera do wszystkich inych - broadcast. Coś jak wysłanie pakietu discover w procesie DORA DHCP. Ruch domeny rozgłoszeniowej jest przekazywany poprzez urządzenia pierwszej i drugiej warstwy modelu OSI tj. koncentratory, mosty, huby czy switche. Te urządzenia zwiększają obszar domeny rozgłoszeniowej. Ograniczają go natomiast urządzenia trzeciej warstwy - routery. Można również utworzyć sieć VLAN, która ograniczy zakres domeny rozgłoszeniowej. Urządzenia są w tej samej domenie rozgłoszeniowej jeśli mają taką samą podsieć, bramę domyślna i są w tej samej VLAN.
-LAN = zasięg domeny rozgłoszeniowej. !!
+**Pytanie**: LAN = zasięg domeny rozgłoszeniowej.
 
-<b>IEEE 802.11 - </b>stamdard bezprzewodowych sieci lokalnych (Wi Fi).
+<b>IEEE 802.11 - </b>standard bezprzewodowych sieci lokalnych (Wi Fi).
 
-**IEEE 802.3 (Ethernet)** -najpopularniejszy typ przewodowych sieci lokalnych. Każdy z komputerów komunikuje się z użyciem protokołu Ethernet z urządzeniem zwanym przełącznikiem, z którym ustanawia połączenie dwupunktowe. Przełacznik posiada wiele portów, z których każdy jest połączony do jednego komputera. Zadaniem przełącznika jest przkazywanie pakietów pomiędzy podłączonymi komputerami na bazie adresów osadznych w pakietach.
-
-**VLAN (Virtual LAN)**- sieci wirtualne.
+**IEEE 802.3 (Ethernet)** -najpopularniejszy typ przewodowych sieci lokalnych. Każdy z komputerów komunikuje się z użyciem protokołu Ethernet z urządzeniem zwanym **przełącznikiem**, z którym ustanawia połączenie dwupunktowe. Przełacznik posiada wiele portów, z których każdy jest połączony do jednego komputera. Zadaniem przełącznika jest przkazywanie pakietów pomiędzy podłączonymi komputerami na bazie adresów osadznych w pakietach.
 
 **Algorytm routingu/ algorytm trasowania** - wyznaczanie najkrórtszej ścieżki pomiędzy routerami.
 
-**VPN (Virtual Prisvate Network)** - sieć wykorzystywana w korporacjach, gdzie zdalni użytkpwmic pracuja z domów na niezabezpieczomnych łącach. Zapewnia szyfrowanie.
+**VPN (Virtual Prisvate Network)** - sieć wykorzystywana w korporacjach, gdzie zdalni użytkownicy pracuja z domów na niezabezpieczonych łączach. Zapewnia szyfrowanie.
 
 **Siec Ad Hoc** - sieć w której przyłączone urządzenia mogą pełnić zarówno rolę klienta, jak i Access Pointa.
 
@@ -23,7 +21,7 @@ LAN = zasięg domeny rozgłoszeniowej. !!
 
 **WEP** - schemat szyfrowania połączenia w sieci 802.11. Polegał na kryptograficznym odizolowaniu transmijsi pomidzy klientami. Schemat był jednak niedpracowany i został zostąpiony przez WPA, a następnie przez WPA2.
 
-**10BASE-T** - standard Ethernetowy, który pozwala urządzeniom siciowym na komunikacje z wukorzystaniem skrętki. Przewidywana prędkość to 10 Mb/s.
+**10BASE-T** - standard Ethernetowy, który pozwala urządzeniom siciowym na komunikacje z wykorzystaniem skrętki. Przewidywana prędkość to 10 Mb/s.
 
 Wyjaśnienie:
 
@@ -33,28 +31,36 @@ Wyjaśnienie:
 
 **100BASE-TX** - tzw. fast Ethernet, maks prędkość to 100Mb/s. Medium transmisyjnym jest skretka nieekranowa UTP lub FTP zakończona obustronnie złączem 8P8C.
 
-**1000BASE-TX/FX** - prędkość 1 Gigabit/s.s
+**1000BASE-TX/FX** - prędkość 1 Gigabit/s.
 
-**Szereg fouriera** jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (Analiza !!)
+**Szereg fouriera** - jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (*Analiza*)
 
-Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy szerokością pasma. Szerokość pasma jest fizyczną właściwością nośnika transmisjij zależną na przykład od konstruklcji kanału, czyli choćby od grubości i długośći przewodów czy śwatłowodów. Np. kanały sieci bezprzewodowych 802.11 mogą zajmować pasmo o szerkości mniej więcej 20MHz.
+Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy **szerokością pasma**. Szerokość pasma jest fizyczną właściwością nośnika transmisjij zależną na przykład od konstruklcji kanału, czyli choćby od grubości i długośći przewodów czy śwatłowodów. Np. kanały sieci bezprzewodowych 802.11 mogą zajmować pasmo o szerkości mniej więcej 20MHz.
 
-**Skrętka (twisted pair)** - najbardziej popularnym zaastosowaniem skrętki jest system telefonnii. Można wykonywac również połączenia z internetem (ADSL). Sygnał za pomoca tego mediium można przeysłac nawet na odległość kilku kilometów jednak na dłuszą metę potrzebne będa regeneratory. Gdyby nie skręcanie kabelków, kable zakłócałyby się nawzajem. Skrętką można przesyłać sygnał analogowy jak i cyfrowy.
+**Skrętka (twisted pair)** - najbardziej popularnym zaastosowaniem skrętki jest system telefonnii. Można wykonywac również połączenia z internetem (ADSL). Sygnał za pomoca tego medium można przeysłać nawet na odległość kilku kilometów jednak na dłuszą metę potrzebne będa regeneratory. Gdyby nie skręcanie kabelków, kable zakłócałyby się nawzajem. Skrętką można przesyłać sygnał analogowy jak i cyfrowy.
 
-**UTP** - skrętka nieekranowa
-Ekranowanie zmniejsza podatność na zakłócenia oraz przesłuchy.
+**UTP** - skrętka nieekranowa. Ekranowanie zmniejsza podatność na zakłócenia oraz przesłuchy.
+
+**Standardy skrętki**: 
+- U/UTP – skrętka nieekranowana
+- F/UTP – skrętka foliowana
+- U/FTP – skrętka z każdą parą w osobnym ekranie z folii.
+- F/FTP – skrętka z każdą parą w osobnym ekranie z folii dodatkowo w ekranie z folii
+- SF/UTP – skrętka ekranowana folią i siatką
+- S/FTP – skrętka z każdą parą foliowaną dodatkowo w ekranie z siatki
+- SF/FTP – skrętka z każdą parą foliowaną dodatkowo w ekranie z folii i siatki
 
 **Kabel koncentryczny** - ma szersze pasmo niż nieekranowa skrętka. Pozwala na przesylanie sygnału z większą szybkością niż skrętka.
 
-**Światłowody** - zapewnia jednokierunkowy system transmisjji danych, który przejmuje sygnał elektryczny, przekształca go i przesyła w posstaci impulsów światła, a następnie ponownie przekształca wyjscie na sygnał elektryczny po stronie odbiornika.
+**Światłowody** - zapewnia jednokierunkowy system transmisjji danych, który przejmuje sygnał elektryczny, przekształca go i przesyła w postaci impulsów światła, a następnie ponownie przekształca wyjscie na sygnał elektryczny po stronie odbiornika.
 
-**Modulacja cyfrowa** - proces konwersji bitów na reprezentujące je sygnały analogowe. Urządzenie używane do tego to modem (Modular Deemulator
+**Modulacja cyfrowa** - proces konwersji bitów na reprezentujące je sygnały analogowe. Urządzenie używane do tego to **modem (Modular Deemulator)**
 
 **Koder-dekoder** - urządzenie słuzące do przetwarzania sygnałów analogowych na na cyfrowe.
 
 ### Urządzenia
 
-Warstwa fizyczna:
+## Warstwa fizyczna:
 **Wzmacniak** - urządzenia analogowe operujące na sygnałach przesyłanych kablami., do których są podłączone. Sygnał odebrany z jednego kabla jest oczysczany, wzmacniany i propagowany do drugiego kabla. Wzmacniaki nie rozumieją ramek, pakietów i nagłówków.
 
 **Koncentrator** - ma pewną liczbę linii wejściowych, które łączy elektrycznie. Ramki pojawiające się w dowolnej linii są wysyłane do wszystkich pozostałych. Działa w trybie półduplesku, czyli nie może jednocześnie odbierać i wysylać danych.
