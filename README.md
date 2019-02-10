@@ -210,5 +210,7 @@ Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 
 **NAS (Network Attached Storage)** - Serwer NAS, czyli Network Attached Storage to nic innego jak niewielki komputer pełniący rolę dysku sieciowego. Dostęp do danych znajdujących się na NAS możliwy jest ze wszystkich urządzeń znajdujących się w sieci lokalnej – oczywiście pod warunkiem posiadania odpowiednich uprawnień. Serwery NAS umożliwiają ograniczenie dostępu do określonych danych, co zwiększa bezpieczeństwo poufnych informacji. **Access Point** pełni funkcję serwera NAS.
 
+**ARPANET (Advanced Research Projects Agency Network)** – pierwsza sieć rozległa oparta na rozproszonej architekturze i protokole TCP/IP. Jest bezpośrednim przodkiem Internetu. Istnieje do dziś.
+
 
 
