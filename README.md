@@ -148,6 +148,13 @@ Adres -- Maska --> operacja AND
 
 (Maska --> NOT -- Adres) --> Operacja OR
 
+**Adres pierwszego hosta**:
+
+Gdy adres sieci 192.168.11.15 -> pierwszy host 192.168.11.16
+
+**Adres ostatniego hosta**: 
+
+Gdy adres rozgłoszeniowy 192.168.11.255 -> ostatni host 192.168.11.254
 
 ## Różne
 
