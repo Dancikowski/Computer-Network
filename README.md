@@ -141,10 +141,12 @@ Internet jest zbudowany z dużej liczby systemów niezależnych albo **AS (Auton
 Adres IP to adres interfejsu sieciowego, nie urządzenia.
 
 **Adres podsieci**:
+
 Adres -- Maska --> operacja AND
 
 **Adres rozgłoszeniowy**:
-Maska --> NOT -- Adres --> Operacja OR
+
+(Maska --> NOT -- Adres) --> Operacja OR
 
 
 ## Różne
