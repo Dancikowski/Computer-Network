@@ -154,6 +154,10 @@ Punkt dostępowy jest zazwyczaj mostem łączącym bezprzewodową sieć lokalną
 - bezprzewodowy działający w oparciu o standard IEEE 802.11 (Wi-Fi)
 - przewodowy służący połączeniu AP z siecią standardu IEEE 802.3 (Ethernet) bądź modem standardu DSL
 
+Access point rozgłasza **SSID**
+
+**SSID (service set identifier)** – identyfikator sieci składający się maksymalnie z 32 znaków, dodawany do nagłówków pakietów wysyłanych przez bezprzewodową sieć lokalną. Pełni on rolę loginu przy próbie nawiązywania połączeń z punktami dostępowymi. Urządzenia, które łączą się z danym punktem dostępowym, korzystają z przypisanego do niego identyfikatora SSID.
+
 ### Typy sieci bezprzewodowych z wykorzystaniem AP
 
 **BSS (Basic Service Set)** - jeśli stacje chcą przesyłać dane między sobą, mogę to robić tylko za pośrednictwem AP. W związku z tym każda stacja musi znajdować się w pobliżu punktu dostępowego, więc zasięg sieci jest równy zasięgowy AP. 
