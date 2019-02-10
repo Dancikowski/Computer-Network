@@ -168,14 +168,14 @@ każdym razem kiedy przychodzi czas na wysłanie ramki **Beacon**
 
 ### Zawartość ramki Beacon
 
-• Timestamp - stempel czasowy do synchronizacji
-• Channel information – Informacja na temat kanału
-• Data Rates – podstawowy i inne wspierane szybkości transmisji
-• Service Set capabilities – dodatkowe parametry dla BSS lub IBSS
-• **SSID** – nazwa sieci
-• TIM (Traffic Indication Map) – informacja na temat buforowanych ramek dla stacji
+* Timestamp - stempel czasowy do synchronizacji
+* Channel information – Informacja na temat kanału
+* Data Rates – podstawowy i inne wspierane szybkości transmisji
+* Service Set capabilities – dodatkowe parametry dla BSS lub IBSS
+* **SSID** – nazwa sieci
+* TIM (Traffic Indication Map) – informacja na temat buforowanych ramek dla stacji
 będących w trybie oszczędzania energii
-• VPI (Vendor Proprietery Information) – Informacje zależne od producenta sprzętu
+* VPI (Vendor Proprietery Information) – Informacje zależne od producenta sprzętu
 Typowo ramka Beacon jest rozsyłana 10 razy na sekundę.
 
 Dodatkowo ramka danych odczekuje interwał **DIFS**
