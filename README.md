@@ -145,6 +145,20 @@ Bluetooth wkorzystuje **FHSS**
 
 **FHSS (Frequency-Hopping Spread Spectrum)** – metoda rozpraszania widma w systemach szerokopasmowych. W tłumaczeniu wprost jest to „skakanie” sygnału po częstotliwościach w kolejnych odstępach czasu, w dostępnym widmie (paśmie). Spotykana również w sieciach Wi - Fi.
 
+### Access Point
+
+Urządzenie zapewniające hostom dostęp do sieci komputerowej za pomocą bezprzewodowego nośnika transmisyjnego jakim są fale radiowe.
+
+Punkt dostępowy jest zazwyczaj mostem łączącym bezprzewodową sieć lokalną (WLAN) z siecią lokalną (LAN). W związku z tym punkt dostępowy musi posiadać co najmniej dwa interfejsy sieciowe:
+
+- bezprzewodowy działający w oparciu o standard IEEE 802.11 (Wi-Fi)
+- przewodowy służący połączeniu PD z siecią standardu IEEE 802.3 (Ethernet) bądź modem standardu DSL
+
+### Typy sieci bezprzewodowych wykorzystujących z wykorzystaniem AP
+
+**BSS (Basic Service Set)** - jeśli stacje chcą przesyłać dane między sobą, mogę to robić tylko za pośrednictwem AP. W związku z tym każda stacja musi znajdować się w pobliżu punktu dostępowego, więc zasięg sieci jest równy zasięgowy AP. 
+
+**ESS (Extended Service Set)** - powstaje w wyniku połączenia kilku BSS-ów za pomocą sieci szkieletowej. W takiej sieci stacje mogą przemieszczać się pomiędzy różnymi BSS-ami bez utraty połączenia. Na obszarze sieci ESS możliwy jest **roaming**.
 
 ## Adresacja IPv4
 
@@ -185,6 +199,8 @@ Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 - Adres hosta zajmuje 64 bity
 
 ## Różne
+
+
 
 **Big endian** - to forma zapisu danych, w której najbardziej znacząct bajt jest ustawiany jako pierwszy.
 
