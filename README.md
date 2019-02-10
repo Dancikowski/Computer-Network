@@ -5,38 +5,31 @@
 **Warstwa aplikacji (7)** - Najwyższa warstwa to ta naprawde program, który pozwala użytkownikowi uzyskać dostęp do zasobów sieciowych.To najczęściej jedyna warstwa dostępna dla użytkownika końcowego.
 **Protokoły**: HTTP, SMTP, FTP
 
-
-**Warstwa prezentacji (6)** -  Warstwa konwertuje otrzymana dane na format zrozumiały dla użytkownika w warstwie aplikacji. Obsługuje kilka form szyfrowania i deszyfrowania stosowanych w celu zabezpieczenia danych.
+**Warstwa prezentacji (6)** - Warstwa konwertuje otrzymana dane na format zrozumiały dla użytkownika w warstwie aplikacji. Obsługuje kilka form szyfrowania i deszyfrowania stosowanych w celu zabezpieczenia danych.
 **Protokoły:** ASCII, MPEG, JPEG
-
 
 **Warstwa sesji (5)** - warstwa da oznacza dialog, inaczej sesję pomiędzy dwoma komputerami. Jest odpowiedzialna za połączenia pomiędzy wszystkimi komunikującymi się komputerami (nawiązywanie połączen, zarządzanie nimi, zamykanie ich). Odpwiada także za rodzaj połączenia (półduplex, duplex).Odpowiada także za eleanckie zakończenia połączenia zamiast nagłego zerwania.
 **Protokoły:** NETBIOS, SAP, SDP
-		
-		
 **Warstwa transportowa (4)** - Podstawowtym celem tej warstwy jest zapewnienie niezawodnych usług transportu danych do warstw niższych. Poprzez kontrolę przepływu, segmentacje danych(dzielenie na segmenty) i ponowne łączenie oraz kontrolę błędów gwaratnuje przekazanie bezbłędnych danych do punktu docelowego. Niektóre zapory sieciowe i serwery proxy działają w ramach tej warstwy.
 **Protokoły:** TCP, UDP
-
-
 
 **Warstwa sieciowa (3)** - Warstwa ta jest odpowiedziala za kierowanie danymi pomiedzy fizycznymi sieciami. Odpowiada za logiczne adresowanie komputerów (np. adresy IP). Na poziomie tej warstwy działają routery.
 **Protokoły**: IP, IPX
 
-
-
 **Warstwa łącza danych (2)** - warstwa zapewnia transport pomiędzy fizycznymi sieciami. Jej podstawowym zadaniem jest dostarczenie schematu adresów, który może służyć do identyfikacji urządzen w sieci np. adresy MAC. Przełączniki to rodzaje urządzeń, które występują w warstwie 2.
 **Protokoły:** Ethernet, Token Ring, FDDI, ARP
 
-
-
-**Warstwa fizyczna (1)** - warstwa jest fizycznym nośnikiem za pomocą którego przesyłane są dane w sieci. Specyfikacje napięcia okablowania i takie tam. Warstwa fizyczna nawiązuje i zamyka połączenia, konwertuje sygnał z postacji 
+**Warstwa fizyczna (1)** - warstwa jest fizycznym nośnikiem za pomocą którego przesyłane są dane w sieci. Specyfikacje napięcia okablowania i takie tam. Warstwa fizyczna nawiązuje i zamyka połączenia, konwertuje sygnał z postacji
 analogowej na cyfrową i na odwrót.
 
+Proces **hermetyzacji** to dodawanie do transmitowanych dancyh nagłowka lub stopki, są to informacje dzięki którym sąsiadujące warstwy są w stanie się komunikować.
+Gdy pakiet idzie z warstwy aplikacji to tworzy się tzw. **PDU (Protocol Data Unit)**, wraz z przechodzeniem przez każdą warstwę, PDU rośnie. Gdy dochodzi do warstwy fizycznej
+wszystko wysyła się do drugiego urządzenia, a to urządzenie przesyła pakiet w górę, usuwając jednocześnie dane odnoszące się do tej warstwy.
 
 ![strona rejestracji administratora](./assets/hermetyzacja.png)
 
 <b style="color:red">Domena kolizyjna - </b> jeśli poprzez jedno medium transimsyjne np. kabel , co najmniej dwa urządzenia transmitują dane może dojść do kolizji. Obszar sieci, w którym może dojść do kolzji nazywamy domena kolizyjną. Maksymalna liczba urządzeń w domenie kolizyjnej to 1024. Przy czym im więcej urządzeń, tym większe ryzyko wystąpienia kolizji. Domenę kolizyjna mogą ograniczać switch (przełącznik) oraz router.  
-W koncentratorze ( warstwa 1 OSI) wszystkie podłączone stacje składają się na domenę kolizyjną. Wszystkie zatem muszą korzystać z alogrytmu *CSMA/CD* w celu uporządkowania transmisji.
+W koncentratorze ( warstwa 1 OSI) wszystkie podłączone stacje składają się na domenę kolizyjną. Wszystkie zatem muszą korzystać z alogrytmu _CSMA/CD_ w celu uporządkowania transmisji.
 W przełączniku każdy port stanowi oddzielną domenę kolizyjną. Algorytm CSMA/CD NIE jest potrzebny.
 
 <b>Domena rozgłoszeniowa </b> - to taki obszar sieci, do którego dotrze informacja przeslana z jednego komputera do wszystkich inych - broadcast. Coś jak wysłanie pakietu discover w procesie DORA DHCP. Ruch domeny rozgłoszeniowej jest przekazywany poprzez urządzenia pierwszej i drugiej warstwy modelu OSI tj. koncentratory, mosty, huby czy switche. Te urządzenia zwiększają obszar domeny rozgłoszeniowej. Ograniczają go natomiast urządzenia trzeciej warstwy - routery. Można również utworzyć sieć VLAN, która ograniczy zakres domeny rozgłoszeniowej. Urządzenia są w tej samej domenie rozgłoszeniowej jeśli mają taką samą podsieć, bramę domyślna i są w tej samej VLAN.
@@ -68,7 +61,7 @@ Wyjaśnienie:
 
 **1000BASE-TX/FX** - prędkość 1 Gigabit/s.
 
-**Szereg fouriera** - jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (*Analiza*)
+**Szereg fouriera** - jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (_Analiza_)
 
 Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy **szerokością pasma**. Szerokość pasma jest fizyczną właściwością nośnika transmisjij zależną na przykład od konstruklcji kanału, czyli choćby od grubości i długośći przewodów czy śwatłowodów. Np. kanały sieci bezprzewodowych 802.11 mogą zajmować pasmo o szerkości mniej więcej 20MHz.
 
@@ -76,14 +69,15 @@ Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy **szeroko�
 
 **UTP** - skrętka nieekranowa. Ekranowanie zmniejsza podatność na zakłócenia oraz przesłuchy.
 
-**Standardy skrętki**: 
-- U/UTP – skrętka nieekranowana
-- F/UTP – skrętka foliowana
-- U/FTP – skrętka z każdą parą w osobnym ekranie z folii.
-- F/FTP – skrętka z każdą parą w osobnym ekranie z folii dodatkowo w ekranie z folii
-- SF/UTP – skrętka ekranowana folią i siatką
-- S/FTP – skrętka z każdą parą foliowaną dodatkowo w ekranie z siatki
-- SF/FTP – skrętka z każdą parą foliowaną dodatkowo w ekranie z folii i siatki
+**Standardy skrętki**:
+
+-   U/UTP – skrętka nieekranowana
+-   F/UTP – skrętka foliowana
+-   U/FTP – skrętka z każdą parą w osobnym ekranie z folii.
+-   F/FTP – skrętka z każdą parą w osobnym ekranie z folii dodatkowo w ekranie z folii
+-   SF/UTP – skrętka ekranowana folią i siatką
+-   S/FTP – skrętka z każdą parą foliowaną dodatkowo w ekranie z siatki
+-   SF/FTP – skrętka z każdą parą foliowaną dodatkowo w ekranie z folii i siatki
 
 **Kabel koncentryczny** - ma szersze pasmo niż nieekranowa skrętka. Pozwala na przesylanie sygnału z większą szybkością niż skrętka.
 
@@ -165,7 +159,7 @@ Internet jest zbudowany z dużej liczby systemów niezależnych albo **AS (Auton
 
 **OSPF (Open Shortest Path First)** - protokół routingu wewnętrznego. Do znajdowania najkrótszej trasy używa algorytmu Dijkstry.
 
-**RIP** - wczesny protokół routingu wewnętrznego opierający się na wektorze odległości.Do utworzenia metryki stosuje się jedynie liczbę przeskoków (liczba kolejnych routerów na danej trasie). Używa UDP jako protokołu warstwy transportowej. 
+**RIP** - wczesny protokół routingu wewnętrznego opierający się na wektorze odległości.Do utworzenia metryki stosuje się jedynie liczbę przeskoków (liczba kolejnych routerów na danej trasie). Używa UDP jako protokołu warstwy transportowej.
 
 **EIGRP** - hybrydowy protokół trasowania operuący na algorytmie wektora odległości. Ma fragmentaryczną wiedzę o strukturze sieci.
 
@@ -186,8 +180,8 @@ Urządzenie zapewniające hostom dostęp do sieci komputerowej za pomocą bezprz
 
 Punkt dostępowy jest zazwyczaj mostem łączącym bezprzewodową sieć lokalną (VLAN) z siecią lokalną (LAN). W związku z tym punkt dostępowy musi posiadać co najmniej dwa interfejsy sieciowe:
 
-- bezprzewodowy działający w oparciu o standard IEEE 802.11 (Wi-Fi)
-- przewodowy służący połączeniu AP z siecią standardu IEEE 802.3 (Ethernet) bądź modem standardu DSL
+-   bezprzewodowy działający w oparciu o standard IEEE 802.11 (Wi-Fi)
+-   przewodowy służący połączeniu AP z siecią standardu IEEE 802.3 (Ethernet) bądź modem standardu DSL
 
 Access point rozgłasza **SSID**
 
@@ -195,13 +189,13 @@ Access point rozgłasza **SSID**
 
 ### Typy sieci bezprzewodowych z wykorzystaniem AP
 
-**BSS (Basic Service Set)** - jeśli stacje chcą przesyłać dane między sobą, mogę to robić tylko za pośrednictwem AP. W związku z tym każda stacja musi znajdować się w pobliżu punktu dostępowego, więc zasięg sieci jest równy zasięgowy AP. 
+**BSS (Basic Service Set)** - jeśli stacje chcą przesyłać dane między sobą, mogę to robić tylko za pośrednictwem AP. W związku z tym każda stacja musi znajdować się w pobliżu punktu dostępowego, więc zasięg sieci jest równy zasięgowy AP.
 
 **ESS (Extended Service Set)** - powstaje w wyniku połączenia kilku BSS-ów za pomocą sieci szkieletowej. W takiej sieci stacje mogą przemieszczać się pomiędzy różnymi BSS-ami bez utraty połączenia. Na obszarze sieci ESS możliwy jest **roaming**.
 
 ## Polecenia w systemie Linux
 
-**Netstat** - wyświetla połączenia sieciowe, tablice tras, statystyki interfejsów, połączenia masquerade i członkostwa multicast. 
+**Netstat** - wyświetla połączenia sieciowe, tablice tras, statystyki interfejsów, połączenia masquerade i członkostwa multicast.
 
 **Nslookup** - narzędzie działające podobnie do protokołu DNS, zwraca adres IP żądanego endpointu oraz adres serwera. Po wybraniu opcji z autoryzacją można otrzymać bardziej szczegółowe informacje
 
@@ -227,11 +221,11 @@ Adres -- Maska --> operacja AND
 
 Gdy adres sieci 192.168.11.15 -> pierwszy host 192.168.11.16
 
-**Adres ostatniego hosta**: 
+**Adres ostatniego hosta**:
 
 Gdy adres rozgłoszeniowy 192.168.11.255 -> ostatni host 192.168.11.254
 
-**Podział sieci na podsieci**: 
+**Podział sieci na podsieci**:
 
 Podział na podsieci odbywa się poprzez pożyczanie kolejnych bitów z części hosta w masce podsieci.
 
@@ -241,20 +235,18 @@ Podział na podsieci odbywa się poprzez pożyczanie kolejnych bitów z części
 
 Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 
-
 ### IPv6
- 
-- Długość adresu: 128 bitów
-- Brak sumy kontrolnej w nagłówku w odróżnieniu od IPv4
-- Nie używa ARP
-- Adres hosta zajmuje 64 bity
+
+-   Długość adresu: 128 bitów
+-   Brak sumy kontrolnej w nagłówku w odróżnieniu od IPv4
+-   Nie używa ARP
+-   Adres hosta zajmuje 64 bity
 
 ## Różne
 
-
 **Big endian** - to forma zapisu danych, w której najbardziej znacząct bajt jest ustawiany jako pierwszy.
 
-**NAT (Network Address Translation)** - polega na tym, że operator ISP przydziela każdemu domostwu albo firmie pojedynczy adres IP. Wewnątrz sieco klienta każdy komputer otrzymuje unikatowy adres IP używany do komunijacji wewnętrznej. Gdy jednak pakiet od któregoś z hostów sieci wewnętrznej ma zostać przekzany do sieci operatora, odbywa się translacja adresu z unikatowego wewnętrznego adresu IP na adres publiczny wspólny dla całej sieci wewnętrznej. 
+**NAT (Network Address Translation)** - polega na tym, że operator ISP przydziela każdemu domostwu albo firmie pojedynczy adres IP. Wewnątrz sieco klienta każdy komputer otrzymuje unikatowy adres IP używany do komunijacji wewnętrznej. Gdy jednak pakiet od któregoś z hostów sieci wewnętrznej ma zostać przekzany do sieci operatora, odbywa się translacja adresu z unikatowego wewnętrznego adresu IP na adres publiczny wspólny dla całej sieci wewnętrznej.
 
 **MIMO (Multiple Input Multiple Output)** - technologia działająca w sieciach 802.11abgn. Urządzenia MIMO są zdolne do ciągłego przetwarzania każdego ze składników sygnału wielościeżkowego i mogą np.: zapobiegać nakładaniu się składowych sygnału będących w przeciw-fazie, skutkującego zniekształceniem sygnału. Poprawne działanie takiego systemu zakłada wykorzystanie kilku zupełnie różnych technik radiowych. Co ważne, niektóre z tych technik oferują korzyści i są kompatybilne z urządzeniami działającymi w starszych standardach 802.11a/b/g, pozostałe wymagają urządzeń zgodnych ze standardem 802.11n po obu stronach linku.
 
@@ -262,5 +254,4 @@ Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 
 **ARPANET (Advanced Research Projects Agency Network)** – pierwsza sieć rozległa oparta na rozproszonej architekturze i protokole TCP/IP. Jest bezpośrednim przodkiem Internetu. Istnieje do dziś.
 
-**IPsec** - zbiór protokołów służących implementacji bezpiecznych połączeń oraz wymiany kluczy szyfrowania pomiędzy komputerami. Protokoły tej grupy mogą być wykorzystywane do tworzenia Wirtualnej Sieci Prywatnej (ang. VPN. Połączenie jest szyfrowane za pamocą algorytmów. Działa w dwóch trybach **transportowym** oraz  **tunelowym**. IPv6 posiada zintegrowany IPsec.
-
+**IPsec** - zbiór protokołów służących implementacji bezpiecznych połączeń oraz wymiany kluczy szyfrowania pomiędzy komputerami. Protokoły tej grupy mogą być wykorzystywane do tworzenia Wirtualnej Sieci Prywatnej (ang. VPN. Połączenie jest szyfrowane za pamocą algorytmów. Działa w dwóch trybach **transportowym** oraz **tunelowym**. IPv6 posiada zintegrowany IPsec.
