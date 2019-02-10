@@ -142,7 +142,8 @@ Procesy warstwy fizycznej oraz część procesów warstwy łącza danch działaj
 
 **Ramka (frame)** składa się z czterech pól: kind, seq, ack i info, z których pierwsze zawierają informacje kontrolne, a ostatnie może zawierać faktcyzne dane do przesłania. Pola kontrolne noszą nazwę nagłówka ramki.
 
-**Protokoły z oknem przesuwnym** - kwintesencją protokołów z oknem przesuwnym, jest to że w każdej chwili nadajnik pamięta zbiór numerów sekwencyjnych odpowiadających ramkom, które ma prawo wysłać. Mówimy że ramki te mieszczą się w **oknie nadawczym** . Podobnie odbiornik utrzymuje **okno odbiorcze** odpowiadające zbiorowi ramek, które ma prawo przyjąć.
+**Protokoły z oknem przesuwnym** - kwintesencją protokołów z oknem przesuwnym, jest to że w każdej chwili nadajnik pamięta zbiór numerów sekwencyjnych odpowiadających ramkom, które ma prawo wysłać. Mówimy że ramki te mieszczą się w **oknie nadawczym** . Podobnie odbiornik utrzymuje **okno odbiorcze** odpowiadające zbiorowi ramek, które ma prawo przyjąć. Wielkość okna jest w nagłówku segmentu TCP i oprócz tego, że określa, jaka ilość danych może zostać wysłana bez potwierdzenia, pozwala jeszcze na sterowanie przepływem danych pomiędzy urządzeniami. Jeśli na kliencie nastąpi zator w przyjmowaniu danych i dany segment zostanie utracony, urządzenie to może wysłać informacje do serwera, o zmniejszeniu wielkość tego okna, czyli ilość danych mogących zostać odebranych bez potwierdzenia, spowalnia to transmisje, ale zapobiega utracie segmentów. Po pewnym czasie wielkość okna przywracana jest to tej początkowej. Zmiana wielkości okna podczas transmisji nazywana jest dynamicznym oknem lub oknem przesuwnym.
+
 
 **SONET** to protokół warstwy fizycznej wykorzystywany przede wszystkim w rozległych sieciach na bazie okablowania światłowodowego, składających się na sieci szkieletowe sieci telekomunikacyjnych, w tym sieci szkieletowe systemów telefonicznych. Zapewnia **strumień bitów** o dobrze ustalonej przeustowości.
 
@@ -151,6 +152,32 @@ Procesy warstwy fizycznej oraz część procesów warstwy łącza danch działaj
 **SDH** - czyli synchroniczna hierarchia systemów cyfrowych. Jest to technologia sieci transportu informacji, charakteryzujący się tym , że wszystkie urządzenia działające w sieci SDH, pracujące w trybie bezawarjnym są zsynchronizowane zarówno do nadrzędnego zegara jak i do siebie nazwajem (W odróżnieniu do ATM)
 
 **NEXT** - przesłuch zbliżny. Jest to zakłócenie generowane w parze na skutek transmisji sygnału w sąsiedniej parze. Współcynnik NEXT(Near End CrossTalk) jest mierzony jako stosunek amplitudy napięcia testowego do napięcia wyindukowanego w sąsiednej parze. Miarą są decybele.
+
+## Działanie 802.11
+
+Sposób dostępu do medium przypomina CSMA/CD stosowany w standardzie IEEE802.3 tzn kolizje są typowym zachowaniem sieci. Zmiany jakie wprowadzono do tego schematu działania wynikają z „niepewności nośnika” i sprowadzają się do:
+
+1. ponieważ nigdy nie jesteśmy pewni czy odbiornika ramki jest w zasięgu zastosowano technikę pozytywnego potwierdzenia: większość ramek musi być potwierdzone ramką ACK jej brak wymusza automatyczne ponowienie transmisji (mogą pojawić się ramki zduplikowane u odbiorcy)
+
+2. Stacja, która z powodzeniem rozpoczęła transmisję informuje w każdym pakiecie jaki czas rezerwuje na transmisję: jest to tzw **Wektor Alokacji Sieci (NAV – NetworkAlocation Vector)** a pozostałe stacje przeliczają ten czas niezależnie (mogą być chwilowo poza zasięgiem)
+
+3. W przypadku kiedy w sieci istnieją stacje które się „nie widzą” aby się wzajemnie nie zakłócały stosuje się sekwencję RTS (Request to Send – nadaje stacja rozpoczynająca transmisję u ucisza stacje w swoim zasięgu) – CTS (Clear to Send – stacja do której
+skierowana była ramka RTS odpowiada CTS uciszając stacje w swoim zasięgu) po czym rozpoczyna się transmisja Najważniejszą ramką zarządzającą w sieciach 802.11 jest ramka **Beacon** rozsyłana jest w stałych odstępach czasu przez punkt dostępowy **AP** lub w sieci „Ad Hoc” przez stację która w pewnym przedziale czasowym wylosuje najkrótszy offset. Losowanie ponawiane jest za
+każdym razem kiedy przychodzi czas na wysłanie ramki **Beacon**
+
+### Zawartość ramki Beacon
+
+• Timestamp - stempel czasowy do synchronizacji
+• Channel information – Informacja na temat kanału
+• Data Rates – podstawowy i inne wspierane szybkości transmisji
+• Service Set capabilities – dodatkowe parametry dla BSS lub IBSS
+• **SSID** – nazwa sieci
+• TIM (Traffic Indication Map) – informacja na temat buforowanych ramek dla stacji
+będących w trybie oszczędzania energii
+• VPI (Vendor Proprietery Information) – Informacje zależne od producenta sprzętu
+Typowo ramka Beacon jest rozsyłana 10 razy na sekundę.
+
+Dodatkowo ramka danych odczekuje interwał **DIFS**
 
 ## Bezpieczeństwo 802.11
 
@@ -169,6 +196,7 @@ Internet jest zbudowany z dużej liczby systemów niezależnych albo **AS (Auton
 **OSPF (Open Shortest Path First)** - protokół routingu wewnętrznego. Do znajdowania najkrótszej trasy używa algorytmu Dijkstry.
 
 **RIP** - wczesny protokół routingu wewnętrznego opierający się na wektorze odległości.Do utworzenia metryki stosuje się jedynie liczbę przeskoków (liczba kolejnych routerów na danej trasie). Używa UDP jako protokołu warstwy transportowej.
+Maksymalna liczba skoków w **RIP 2** wynosi 15.
 
 **EIGRP** - hybrydowy protokół trasowania operuący na algorytmie wektora odległości. Ma fragmentaryczną wiedzę o strukturze sieci.
 
@@ -285,5 +313,13 @@ W przełączniku każdy port stanowi oddzielną domenę kolizyjną. Algorytm CSM
 **ARPANET (Advanced Research Projects Agency Network)** – pierwsza sieć rozległa oparta na rozproszonej architekturze i protokole TCP/IP. Jest bezpośrednim przodkiem Internetu. Istnieje do dziś.
 
 **IPsec** - zbiór protokołów służących implementacji bezpiecznych połączeń oraz wymiany kluczy szyfrowania pomiędzy komputerami. Protokoły tej grupy mogą być wykorzystywane do tworzenia Wirtualnej Sieci Prywatnej (ang. VPN. Połączenie jest szyfrowane za pamocą algorytmów. Działa w dwóch trybach **transportowym** oraz **tunelowym**. IPv6 posiada zintegrowany IPsec.
+
+**ICANN** - to ogranizacja odpowiedzialna za przydzielanie nazw domen internetowych, ustalaniem ich struktury oraz ogólny nadzór nad działaniem serwerów DNS na całym świecie. Odpowiada również za numery AS -ów.
+
+**OFDM (Orthogonal Frequency-Division Multiplexing)** – metoda zwielokrotnienia w dziedzinie częstotliwości polegająca na jednoczesnej transmisji wielu strumieni danych na ortogonalnych częstotliwościach nośnych.
+
+**802.16 (WiMAX)** - technika bezprzewodowej, szerokopasmowej transmisji danych. Używa **16QAM**
+
+**Bod** - miara określająca prędkość przesyłania **zmian medium transmisyjnego** (nazwanych symbolami) z wykorzystaniem cyfrowej modulacji sygnału 
 
 **Szereg fouriera** - jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (_Analiza_)
