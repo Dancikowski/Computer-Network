@@ -154,7 +154,7 @@ Punkt dostępowy jest zazwyczaj mostem łączącym bezprzewodową sieć lokalną
 - bezprzewodowy działający w oparciu o standard IEEE 802.11 (Wi-Fi)
 - przewodowy służący połączeniu AP z siecią standardu IEEE 802.3 (Ethernet) bądź modem standardu DSL
 
-### Typy sieci bezprzewodowych wykorzystujących z wykorzystaniem AP
+### Typy sieci bezprzewodowych z wykorzystaniem AP
 
 **BSS (Basic Service Set)** - jeśli stacje chcą przesyłać dane między sobą, mogę to robić tylko za pośrednictwem AP. W związku z tym każda stacja musi znajdować się w pobliżu punktu dostępowego, więc zasięg sieci jest równy zasięgowy AP. 
 
