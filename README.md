@@ -156,6 +156,16 @@ Gdy adres sieci 192.168.11.15 -> pierwszy host 192.168.11.16
 
 Gdy adres rozgłoszeniowy 192.168.11.255 -> ostatni host 192.168.11.254
 
+**Podział sieci na podsieci**: 
+
+Podział na podsieci odbywa się poprzez pożyczanie kolejnych bitów z części hosta w masce podsieci.
+
+255.255.255.0 -> 1 podsieć
+255.255.255.128 -> 2 podsieci. Pożyczony został 1 bit pierwszy od lewej czyli 2^8.
+
+Ilość podsieci = 2^pożyczona liczba bitów.
+
+
 ## Różne
 
 **Big endian** - to forma zapisu danych, w której najbardziej znacząct bajt jest ustawiany jako pierwszy.
