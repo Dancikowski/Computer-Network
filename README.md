@@ -28,26 +28,37 @@ wszystko wysyła się do drugiego urządzenia, a to urządzenie przesyła pakiet
 
 ![strona rejestracji administratora](./assets/hermetyzacja.png)
 
-<b style="color:red">Domena kolizyjna - </b> jeśli poprzez jedno medium transimsyjne np. kabel , co najmniej dwa urządzenia transmitują dane może dojść do kolizji. Obszar sieci, w którym może dojść do kolzji nazywamy domena kolizyjną. Maksymalna liczba urządzeń w domenie kolizyjnej to 1024. Przy czym im więcej urządzeń, tym większe ryzyko wystąpienia kolizji. Domenę kolizyjna mogą ograniczać switch (przełącznik) oraz router.  
-W koncentratorze ( warstwa 1 OSI) wszystkie podłączone stacje składają się na domenę kolizyjną. Wszystkie zatem muszą korzystać z alogrytmu _CSMA/CD_ w celu uporządkowania transmisji.
-W przełączniku każdy port stanowi oddzielną domenę kolizyjną. Algorytm CSMA/CD NIE jest potrzebny.
+## Protokoły
 
-<b>Domena rozgłoszeniowa </b> - to taki obszar sieci, do którego dotrze informacja przeslana z jednego komputera do wszystkich inych - broadcast. Coś jak wysłanie pakietu discover w procesie DORA DHCP. Ruch domeny rozgłoszeniowej jest przekazywany poprzez urządzenia pierwszej i drugiej warstwy modelu OSI tj. koncentratory, mosty, huby czy switche. Te urządzenia zwiększają obszar domeny rozgłoszeniowej. Ograniczają go natomiast urządzenia trzeciej warstwy - routery. Można również utworzyć sieć VLAN, która ograniczy zakres domeny rozgłoszeniowej. Urządzenia są w tej samej domenie rozgłoszeniowej jeśli mają taką samą podsieć, bramę domyślna i są w tej samej VLAN.
-**Pytanie**: LAN = zasięg domeny rozgłoszeniowej.
+### ARP
 
-<b>IEEE 802.11 - </b>standard bezprzewodowych sieci lokalnych (Wi Fi).
+-   określenie nazwy za pomocą protokołu ARP wymaga użycia jedynie dwóch pakietów: żądania ARP i odpowiedzi ARP
+-   RFC to dokument definiujący standardy implementacji protokołów
+-   komputer nadawcy wysyła żądanie ARP do każdego komputera w domenie rozgłoszeniowej, żądanie ma swój adres IP, swój adres MAC oraz adres IP odbiorcy
+    następnie pyta się wszystkich komputerów czy ktoś ma może taki adres IP. Jeden z komputerów odpowiada adresem MAC
+-   urządzenia do których nie pasuje adres IP odrzucają ten pakiet
 
-**IEEE 802.3 (Ethernet)** -najpopularniejszy typ przewodowych sieci lokalnych. Każdy z komputerów komunikuje się z użyciem protokołu Ethernet z urządzeniem zwanym **przełącznikiem**, z którym ustanawia połączenie dwupunktowe. Przełacznik posiada wiele portów, z których każdy jest połączony do jednego komputera. Zadaniem przełącznika jest przkazywanie pakietów pomiędzy podłączonymi komputerami na bazie adresów osadznych w pakietach.
+### TCP
 
-**Algorytm routingu/ algorytm trasowania** - wyznaczanie najkrórtszej ścieżki pomiędzy routerami.
+-   głównym celem protokołu TCP jest niezawodne dostarczanie danych
+-   do komunikacji używamy portów z zakresu 1024 - 65535
 
-**VPN (Virtual Prisvate Network)** - sieć wykorzystywana w korporacjach, gdzie zdalni użytkownicy pracuja z domów na niezabezpieczonych łączach. Zapewnia szyfrowanie.
+**Trzyetapowy proces nawiązywania połączenia**
 
-**Siec Ad Hoc** - sieć w której przyłączone urządzenia mogą pełnić zarówno rolę klienta, jak i Access Pointa.
+1. W pierwszym kroku urządzenie, które chce nawiązać komunikacje wysyła pakiet TCP do urządzenia docelowego. Pakiet początkowy nie zawiera danych, a jedynie nagłówki protokołu warstwy niższej.
+   Ten nagłówek ma ustawioną flagę na SYN i przekazuje początkowy numer sekwencyjny oraz maksymalną wielkość segmentu, które będą używane w procesie komunikacji
+2. Drugi komputer odpowiada podobnym pakietem z ustawioną flagą na ACK/SYN oraz początkowym numerem sekwencyjnym.
+3. Na koniec pierwszy komputer wysyła do drugiego pakiet z flagą ACK. Po tym urządzenia mogą się komunikować.
 
-**CSMA (Carrier Sense Multiple Access)** - algorytm arbitrażowy. Rozwiązuje problem kolizji w sieci 802.11. Polega na tym, że komputer chcący nadawać oczekuje na losowy adres przed transmijsą, a jeśli w czasie transmisji wykryje innego nadawcę, odstępuje od niej i znów czeka losowy okres.
+### UDP
 
-**WEP** - schemat szyfrowania połączenia w sieci 802.11. Polegał na kryptograficznym odizolowaniu transmijsi pomidzy klientami. Schemat był jednak niedpracowany i został zostąpiony przez WPA, a następnie przez WPA2.
+-   celem utworzenia UDP było przyspieszenie transmisji danych
+-   jest to protokół bezstanowy
+-   formalnie nie wykorzystuje operacji nawiązywania i zakończenia połączenia
+-   najczęściej protokły opare na UDP mają własne, wbudowane mechanizmy zapewniające niezawodność lub używają pewnych funkcji ICMP w celu ich zapewnienia
+-   np. protokoły DNS i DHCP używają UDP jako protokołu warstwy transportowej, po ich stronie spoczywa odpowiedzialność na tym aby kontrolować pakiety i przesyłać je ponownie jeśli jest taka potrzeba
+
+## Media transmisyjne
 
 **10BASE-T** - standard Ethernetowy, który pozwala urządzeniom siciowym na komunikacje z wykorzystaniem skrętki. Przewidywana prędkość to 10 Mb/s.
 
@@ -60,8 +71,6 @@ Wyjaśnienie:
 **100BASE-TX** - tzw. fast Ethernet, maks prędkość to 100Mb/s. Medium transmisyjnym jest skretka nieekranowa UTP lub FTP zakończona obustronnie złączem 8P8C.
 
 **1000BASE-TX/FX** - prędkość 1 Gigabit/s.
-
-**Szereg fouriera** - jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (_Analiza_)
 
 Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy **szerokością pasma**. Szerokość pasma jest fizyczną właściwością nośnika transmisjij zależną na przykład od konstruklcji kanału, czyli choćby od grubości i długośći przewodów czy śwatłowodów. Np. kanały sieci bezprzewodowych 802.11 mogą zajmować pasmo o szerkości mniej więcej 20MHz.
 
@@ -83,10 +92,6 @@ Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy **szeroko�
 
 **Światłowody** - zapewnia jednokierunkowy system transmisjji danych, który przejmuje sygnał elektryczny, przekształca go i przesyła w postaci impulsów światła, a następnie ponownie przekształca wyjscie na sygnał elektryczny po stronie odbiornika.
 
-**Modulacja cyfrowa** - proces konwersji bitów na reprezentujące je sygnały analogowe. Urządzenie używane do tego to **modem (Modular Deemulator)**
-
-**Koder-dekoder** - urządzenie słuzące do przetwarzania sygnałów analogowych na na cyfrowe.
-
 ## Urządzenia
 
 ### Warstwa fizyczna:
@@ -97,6 +102,10 @@ Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy **szeroko�
 Przykład: do koncentratora, który ma 4 porty mamy podłączone 4 urządzenia. Komputer z portu 2 chce wysłać dane do komputera
 na porcie numer 1. Wysyła również te dane do komputerów na portach 3 i 4, klienci na tych portach sprawdzają docelowy adres MAC
 zawarty w nagłówku Ethernet i odrzucają to połączenie. To rozwiązanie generuje dużo niepotrzebnego ruchu sieciowego.
+
+**Modulacja cyfrowa** - proces konwersji bitów na reprezentujące je sygnały analogowe. Urządzenie używane do tego to **modem (Modular Deemulator)**
+
+**Koder-dekoder** - urządzenie słuzące do przetwarzania sygnałów analogowych na na cyfrowe.
 
 ### Warstwa łącza danych
 
@@ -244,6 +253,27 @@ Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 
 ## Różne
 
+<b style="color:red">Domena kolizyjna - </b> jeśli poprzez jedno medium transimsyjne np. kabel , co najmniej dwa urządzenia transmitują dane może dojść do kolizji. Obszar sieci, w którym może dojść do kolzji nazywamy domena kolizyjną. Maksymalna liczba urządzeń w domenie kolizyjnej to 1024. Przy czym im więcej urządzeń, tym większe ryzyko wystąpienia kolizji. Domenę kolizyjna mogą ograniczać switch (przełącznik) oraz router.  
+W koncentratorze ( warstwa 1 OSI) wszystkie podłączone stacje składają się na domenę kolizyjną. Wszystkie zatem muszą korzystać z alogrytmu _CSMA/CD_ w celu uporządkowania transmisji.
+W przełączniku każdy port stanowi oddzielną domenę kolizyjną. Algorytm CSMA/CD NIE jest potrzebny.
+
+<b>Domena rozgłoszeniowa </b> - to taki obszar sieci, do którego dotrze informacja przeslana z jednego komputera do wszystkich inych - broadcast. Coś jak wysłanie pakietu discover w procesie DORA DHCP. Ruch domeny rozgłoszeniowej jest przekazywany poprzez urządzenia pierwszej i drugiej warstwy modelu OSI tj. koncentratory, mosty, huby czy switche. Te urządzenia zwiększają obszar domeny rozgłoszeniowej. Ograniczają go natomiast urządzenia trzeciej warstwy - routery. Można również utworzyć sieć VLAN, która ograniczy zakres domeny rozgłoszeniowej. Urządzenia są w tej samej domenie rozgłoszeniowej jeśli mają taką samą podsieć, bramę domyślna i są w tej samej VLAN.
+**Pytanie**: LAN = zasięg domeny rozgłoszeniowej.
+
+<b>IEEE 802.11 - </b>standard bezprzewodowych sieci lokalnych (Wi Fi).
+
+**IEEE 802.3 (Ethernet)** -najpopularniejszy typ przewodowych sieci lokalnych. Każdy z komputerów komunikuje się z użyciem protokołu Ethernet z urządzeniem zwanym **przełącznikiem**, z którym ustanawia połączenie dwupunktowe. Przełacznik posiada wiele portów, z których każdy jest połączony do jednego komputera. Zadaniem przełącznika jest przkazywanie pakietów pomiędzy podłączonymi komputerami na bazie adresów osadznych w pakietach.
+
+**Algorytm routingu/ algorytm trasowania** - wyznaczanie najkrórtszej ścieżki pomiędzy routerami.
+
+**VPN (Virtual Prisvate Network)** - sieć wykorzystywana w korporacjach, gdzie zdalni użytkownicy pracuja z domów na niezabezpieczonych łączach. Zapewnia szyfrowanie.
+
+**Siec Ad Hoc** - sieć w której przyłączone urządzenia mogą pełnić zarówno rolę klienta, jak i Access Pointa.
+
+**CSMA (Carrier Sense Multiple Access)** - algorytm arbitrażowy. Rozwiązuje problem kolizji w sieci 802.11. Polega na tym, że komputer chcący nadawać oczekuje na losowy adres przed transmijsą, a jeśli w czasie transmisji wykryje innego nadawcę, odstępuje od niej i znów czeka losowy okres.
+
+**WEP** - schemat szyfrowania połączenia w sieci 802.11. Polegał na kryptograficznym odizolowaniu transmijsi pomidzy klientami. Schemat był jednak niedpracowany i został zostąpiony przez WPA, a następnie przez WPA2.
+
 **Big endian** - to forma zapisu danych, w której najbardziej znacząct bajt jest ustawiany jako pierwszy.
 
 **NAT (Network Address Translation)** - polega na tym, że operator ISP przydziela każdemu domostwu albo firmie pojedynczy adres IP. Wewnątrz sieco klienta każdy komputer otrzymuje unikatowy adres IP używany do komunijacji wewnętrznej. Gdy jednak pakiet od któregoś z hostów sieci wewnętrznej ma zostać przekzany do sieci operatora, odbywa się translacja adresu z unikatowego wewnętrznego adresu IP na adres publiczny wspólny dla całej sieci wewnętrznej.
@@ -255,3 +285,5 @@ Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 **ARPANET (Advanced Research Projects Agency Network)** – pierwsza sieć rozległa oparta na rozproszonej architekturze i protokole TCP/IP. Jest bezpośrednim przodkiem Internetu. Istnieje do dziś.
 
 **IPsec** - zbiór protokołów służących implementacji bezpiecznych połączeń oraz wymiany kluczy szyfrowania pomiędzy komputerami. Protokoły tej grupy mogą być wykorzystywane do tworzenia Wirtualnej Sieci Prywatnej (ang. VPN. Połączenie jest szyfrowane za pamocą algorytmów. Działa w dwóch trybach **transportowym** oraz **tunelowym**. IPv6 posiada zintegrowany IPsec.
+
+**Szereg fouriera** - jest wykorzystyawany do zmiany sygnału cyfrowego na analofowy (_Analiza_)
