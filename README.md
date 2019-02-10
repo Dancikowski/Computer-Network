@@ -143,7 +143,7 @@ Jest to otwarty standard opisany w specyfikacji IEEE 802.15.1. Jego specyfikacja
 Do wymiany danych stosuje dwa typy łączy **SCO** oraz **ACL**.
 Bluetooth wkorzystuje **FHSS**
 
-**FHSS (Frequency-Hopping Spread Spectrum)** – metoda rozpraszania widma w systemach szerokopasmowych. W tłumaczeniu wprost jest to „skakanie” sygnału po częstotliwościach w kolejnych odstępach czasu, w dostępnym widmie (paśmie).
+**FHSS (Frequency-Hopping Spread Spectrum)** – metoda rozpraszania widma w systemach szerokopasmowych. W tłumaczeniu wprost jest to „skakanie” sygnału po częstotliwościach w kolejnych odstępach czasu, w dostępnym widmie (paśmie). Spotykana również w sieciach Wi - Fi.
 
 
 ## Adresacja IPv4
