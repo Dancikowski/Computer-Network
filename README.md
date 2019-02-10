@@ -3,28 +3,32 @@
 ## Model OSI
 
 **Warstwa aplikacji (7)** - Najwyższa warstwa to ta naprawde program, który pozwala użytkownikowi uzyskać dostęp do zasobów sieciowych.To najczęściej jedyna warstwa dostępna dla użytkownika końcowego.
-
 **Protokoły**: HTTP, SMTP, FTP
-<br>
+
+
 **Warstwa prezentacji (6)** -  Warstwa konwertuje otrzymana dane na format zrozumiały dla użytkownika w warstwie aplikacji. Obsługuje kilka form szyfrowania i deszyfrowania stosowanych w celu zabezpieczenia danych.
-
 **Protokoły:** ASCII, MPEG, JPEG
-<br>
-**Warstwa sesji (5)** - warstwa da oznacza dialog, inaczej sesję pomiędzy dwoma komputerami. Jest odpowiedzialna za połączenia pomiędzy wszystkimi komunikującymi się komputerami (nawiązywanie połączen, zarządzanie nimi, zamykanie ich). Odpwiada także za rodzaj połączenia (półduplex, duplex).Odpowiada także za eleanckie zakończenia połączenia zamiast nagłego zerwania.
 
+
+**Warstwa sesji (5)** - warstwa da oznacza dialog, inaczej sesję pomiędzy dwoma komputerami. Jest odpowiedzialna za połączenia pomiędzy wszystkimi komunikującymi się komputerami (nawiązywanie połączen, zarządzanie nimi, zamykanie ich). Odpwiada także za rodzaj połączenia (półduplex, duplex).Odpowiada także za eleanckie zakończenia połączenia zamiast nagłego zerwania.
 **Protokoły:** NETBIOS, SAP, SDP
-			
+		
+		
 **Warstwa transportowa (4)** - Podstawowtym celem tej warstwy jest zapewnienie niezawodnych usług transportu danych do warstw niższych. Poprzez kontrolę przepływu, segmentacje danych(dzielenie na segmenty) i ponowne łączenie oraz kontrolę błędów gwaratnuje przekazanie bezbłędnych danych do punktu docelowego. Niektóre zapory sieciowe i serwery proxy działają w ramach tej warstwy.
-						   
 **Protokoły:** TCP, UDP
-<br>
+
+
+
 **Warstwa sieciowa (3)** - Warstwa ta jest odpowiedziala za kierowanie danymi pomiedzy fizycznymi sieciami. Odpowiada za logiczne adresowanie komputerów (np. adresy IP). Na poziomie tej warstwy działają routery.
 **Protokoły**: IP, IPX
-<br>
-**Warstwa łącza danych (2)** - warstwa zapewnia transport pomiędzy fizycznymi sieciami. Jej podstawowym zadaniem jest dostarczenie schematu adresów, który może służyć do identyfikacji urządzen w sieci np. adresy MAC. Przełączniki to rodzaje urządzeń, które występują w warstwie 2.
 
+
+
+**Warstwa łącza danych (2)** - warstwa zapewnia transport pomiędzy fizycznymi sieciami. Jej podstawowym zadaniem jest dostarczenie schematu adresów, który może służyć do identyfikacji urządzen w sieci np. adresy MAC. Przełączniki to rodzaje urządzeń, które występują w warstwie 2.
 **Protokoły:** Ethernet, Token Ring, FDDI, ARP
-<br>
+
+
+
 **Warstwa fizyczna (1)** - warstwa jest fizycznym nośnikiem za pomocą którego przesyłane są dane w sieci. Specyfikacje napięcia okablowania i takie tam. Warstwa fizyczna nawiązuje i zamyka połączenia, konwertuje sygnał z postacji 
 analogowej na cyfrową i na odwrót.
 
