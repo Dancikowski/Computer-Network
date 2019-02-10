@@ -149,10 +149,10 @@ Bluetooth wkorzystuje **FHSS**
 
 Urządzenie zapewniające hostom dostęp do sieci komputerowej za pomocą bezprzewodowego nośnika transmisyjnego jakim są fale radiowe.
 
-Punkt dostępowy jest zazwyczaj mostem łączącym bezprzewodową sieć lokalną (WLAN) z siecią lokalną (LAN). W związku z tym punkt dostępowy musi posiadać co najmniej dwa interfejsy sieciowe:
+Punkt dostępowy jest zazwyczaj mostem łączącym bezprzewodową sieć lokalną (VLAN) z siecią lokalną (LAN). W związku z tym punkt dostępowy musi posiadać co najmniej dwa interfejsy sieciowe:
 
 - bezprzewodowy działający w oparciu o standard IEEE 802.11 (Wi-Fi)
-- przewodowy służący połączeniu PD z siecią standardu IEEE 802.3 (Ethernet) bądź modem standardu DSL
+- przewodowy służący połączeniu AP z siecią standardu IEEE 802.3 (Ethernet) bądź modem standardu DSL
 
 ### Typy sieci bezprzewodowych wykorzystujących z wykorzystaniem AP
 
