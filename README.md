@@ -177,6 +177,13 @@ Podział na podsieci odbywa się poprzez pożyczanie kolejnych bitów z części
 Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 
 
+### IPv6
+ 
+- Długość adresu: 128 bitów
+- Brak sumy kontrolnej w nagłówku w odróżnieniu od IPv4
+- Nie używa ARP
+- Adres hosta zajmuje 64 bity
+
 ## Różne
 
 **Big endian** - to forma zapisu danych, w której najbardziej znacząct bajt jest ustawiany jako pierwszy.
@@ -186,3 +193,6 @@ Ilość podsieci = 2<sup> pożyczona liczba bitów</sup>
 **MIMO (Multiple Input Multiple Output)** - technologia działająca w sieciach 802.11abgn. Urządzenia MIMO są zdolne do ciągłego przetwarzania każdego ze składników sygnału wielościeżkowego i mogą np.: zapobiegać nakładaniu się składowych sygnału będących w przeciw-fazie, skutkującego zniekształceniem sygnału. Poprawne działanie takiego systemu zakłada wykorzystanie kilku zupełnie różnych technik radiowych. Co ważne, niektóre z tych technik oferują korzyści i są kompatybilne z urządzeniami działającymi w starszych standardach 802.11a/b/g, pozostałe wymagają urządzeń zgodnych ze standardem 802.11n po obu stronach linku.
 
 **NAS (Network Attached Storage)** - Serwer NAS, czyli Network Attached Storage to nic innego jak niewielki komputer pełniący rolę dysku sieciowego. Dostęp do danych znajdujących się na NAS możliwy jest ze wszystkich urządzeń znajdujących się w sieci lokalnej – oczywiście pod warunkiem posiadania odpowiednich uprawnień. Serwery NAS umożliwiają ograniczenie dostępu do określonych danych, co zwiększa bezpieczeństwo poufnych informacji. **Access Point** pełni funkcję serwera NAS.
+
+
+
