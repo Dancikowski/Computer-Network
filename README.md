@@ -62,9 +62,9 @@ Zakres częstotliwości przenoszonych bez silnego tłumienia nazywamy **szeroko�
 
 ### Warstwa fizyczna:
 
-**Wzmacniak** - urządzenia analogowe operujące na sygnałach przesyłanych kablami., do których są podłączone. Sygnał odebrany z jednego kabla jest oczyszczany, wzmacniany i propagowany do drugiego kabla. Wzmacniaki nie rozumieją ramek, pakietów i nagłówków.
+**Wzmacniak (repeater)** - urządzenia analogowe operujące na sygnałach przesyłanych kablami., do których są podłączone. Sygnał odebrany z jednego kabla jest oczyszczany, wzmacniany i propagowany do drugiego kabla. Wzmacniaki nie rozumieją ramek, pakietów i nagłówków.
 
-**Koncentrator** - ma pewną liczbę linii wejściowych, które łączy elektrycznie. Ramki pojawiające się w dowolnej linii są wysyłane do wszystkich pozostałych. Działa w trybie półduplesku, czyli nie może jednocześnie odbierać i wysylać danych.
+**Koncentrator (hub)** - ma pewną liczbę linii wejściowych, które łączy elektrycznie. Ramki pojawiające się w dowolnej linii są wysyłane do wszystkich pozostałych. Działa w trybie półduplesku, czyli nie może jednocześnie odbierać i wysylać danych.
 Przykład: do koncentratora, który ma 4 porty mamy podłączone 4 urządzenia. Komputer z portu 2 chce wysłać dane do komputera
 na porcie numer 1. Wysyła również te dane do komputerów na portach 3 i 4, klienci na tych portach sprawdzają docelowy adres MAC
 zawarty w nagłówku Ethernet i odrzucają to połączenie. To rozwiązanie generuje dużo niepotrzebnego ruchu sieciowego.
@@ -90,7 +90,7 @@ Pytania:
 
 **Brama** - łączy ona dwa komputery używające odmiennych połączeniowych protokołów transportowych. Załóżmy, że komputer używający połączeniowego TCP/IP chce komunikować się z komputerem używającym innego protokołu połączeniowego o nazwie SCTP. Brama może kopiować pakiety z jednego połączenia do drugiego, w razie potrzeby zmieniając ich format.
 
-### Wirtualna sieć lokalna VLAN
+## Wirtualna sieć lokalna VLAN
 
 Wirtualne sieci lokalne buduje się z użyciem odpowiednich przełączników. Aby zestawić sieć opartą na VLAN, administrator decyduje, ile sieci lokalnych będzie używanych, które komputery będa należeć do konkretnych z nich i jakie będa nazwy tych sieci. Aby wirtualna sieć mogła działać prawidłowo, należy skonfugurować tablice konfiguracyjne w mostach. Tablice te informują, które VLANY są dostępne przez które porty.
 
