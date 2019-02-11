@@ -241,7 +241,7 @@ Access point rozgłasza **SSID**
 
 ## Polecenia w systemie Linux
 
-**Netstat** - wyświetla połączenia sieciowe, tablice tras, statystyki interfejsów, połączenia masquerade i członkostwa multicast.
+**Netstat** - wyświetla połączenia sieciowe, tablice tras, statystyki interfejsów, połączenia masquerade i członkostwa multicast. Raportuje o pracy TCP/UDP.
 
 **Nslookup** - narzędzie działające podobnie do protokołu DNS, zwraca adres IP żądanego endpointu oraz adres serwera. Po wybraniu opcji z autoryzacją można otrzymać bardziej szczegółowe informacje
 
